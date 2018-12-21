@@ -9,6 +9,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class RegistroActivity : AppCompatActivity() {
 
+
+
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.nav_home -> {

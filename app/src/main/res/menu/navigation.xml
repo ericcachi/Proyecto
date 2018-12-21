@@ -7,4 +7,6 @@
           android:id="@+id/nav_register"/>
     <item android:title="Ajustes" android:icon="@drawable/baseline_settings_black_18dp"
           android:id="@+id/nav_ajustes"/>
+
+
 </menu>
