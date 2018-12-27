@@ -6,9 +6,15 @@
              tools:context=".FragmentHome">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="hello_home_fragment"/>
+            android:layout_height="match_parent">
+
+        <TextView
+                android:text="ESTAS EN HOME"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        />
+    </RelativeLayout>
 
 </FrameLayout>

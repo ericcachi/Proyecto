@@ -6,9 +6,15 @@
              tools:context=".FragmentRegistro">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="hello_registro_fragment"/>
+            android:layout_height="match_parent">
+
+        <TextView
+                android:text="ESTAS EN REGISTRO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        />
+    </RelativeLayout>
 
 </FrameLayout>
