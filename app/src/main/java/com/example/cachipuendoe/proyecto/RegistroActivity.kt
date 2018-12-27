@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class RegistroActivity : AppCompatActivity() {
@@ -22,12 +23,14 @@ class RegistroActivity : AppCompatActivity() {
 
             R.id.nav_register -> {
                 registro()
+
                 Toast.makeText(this,"Pestaña Registro", Toast.LENGTH_SHORT).show()
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_ajustes -> {
                 ajustes()
+
                 Toast.makeText(this,"Pestaña Ajustes", Toast.LENGTH_SHORT).show()
                 return@OnNavigationItemSelectedListener true
             }
@@ -38,7 +41,6 @@ class RegistroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
     fun principal(){
