@@ -9,25 +9,25 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-
+    val manager = this.supportFragmentManager
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.nav_home -> {
-                principal()
-                Toast.makeText(this,"Pestaña Home", Toast.LENGTH_SHORT).show()
+                message.setText("Home")
+                createFragmenteHome()
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_register -> {
-                registro()
-                Toast.makeText(this,"Pestaña Registro", Toast.LENGTH_SHORT).show()
+                message.setText("Registro")
+                createFragmenteRegistro()
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_ajustes -> {
-                ajustes()
-                Toast.makeText(this,"Pestaña Ajustes", Toast.LENGTH_SHORT).show()
+                message.setText("Ajustes")
+                createFragmenteAjustes()
                 return@OnNavigationItemSelectedListener true
             }
 
@@ -40,22 +40,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        main_nav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
-    fun principal(){
-        var intent = Intent (this,MainActivity::class.java)
-        this.startActivity(intent)
+    fun createFragmenteHome()
+    {
+        val trans = manager.beginTransaction()
+        val fragment = FragmentHome()
+        trans.replace(R.id.fragmentholder,fragment)
+        trans.addToBackStack(null)
+        trans.commit()
     }
 
-    fun registro(){
-        var intent = Intent (this,RegistroActivity::class.java)
-        this.startActivity(intent)
+    fun createFragmenteRegistro()
+    {
+        val trans = manager.beginTransaction()
+        val fragment = FragmentRegistro()
+        trans.replace(R.id.fragmentholder,fragment)
+        trans.addToBackStack(null)
+        trans.commit()
     }
 
-    fun ajustes(){
-        var intent = Intent (this,AjustesActivity::class.java)
-        this.startActivity(intent)
+    fun createFragmenteAjustes()
+    {
+        val trans = manager.beginTransaction()
+        val fragment = FragmentAjustes()
+        trans.replace(R.id.fragmentholder,fragment)
+        trans.addToBackStack(null)
+        trans.commit()
     }
 
 
